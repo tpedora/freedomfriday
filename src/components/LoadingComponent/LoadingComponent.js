@@ -2,9 +2,9 @@ import React, { Fragment } from "react";
 import Skeleton from "react-loading-skeleton";
 
 const renderComponent = array => {
-  return array.map(a => (
+  return array.map(title => (
     <div>
-      <p style={{ display: "inline" }}>{`${a}: `}</p>
+      <p style={{ display: "inline" }}>{`${title}: `}</p>
       <Skeleton width={50} />
     </div>
   ));
