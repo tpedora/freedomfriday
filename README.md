@@ -1,4 +1,4 @@
-This is testing the functionality of <Suspense /> and <ErrorBoundary />.
+This is testing the functionality of Suspense and ErrorBoundary.
 
 The Personal and Employee data call is two seperate API calls using a <LoadingComponent /> to display skeletons.
 
