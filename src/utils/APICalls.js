@@ -10,8 +10,8 @@ const fetchLocation = () => {
     .then(x => x.results[0].location);
 };
 
-const fetchEmployee = () => {
-  return fetch("http://dummy.restapiexample.com/api/v1/employees")
+const fetchEmployee = url => {
+  return fetch(`http://dummy.restapiexample.com/api/v1/${url}`)
     .then(x => x.json())
     .then(x => x[0]);
 };

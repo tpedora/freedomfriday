@@ -1,17 +1,17 @@
 import React, { Fragment } from "react";
 
-const EmployeeComponent = ({ resource }) => {
-  const employee = resource.data.read();
+const EmployeeComponent = ({ employee }) => {
+  const employeeData = employee.data.read();
 
   return (
     <Fragment>
       <div>
         <p style={{ display: "inline" }}>ID: </p>
-        <span>{employee.id}</span>
+        <span>{employeeData.id}</span>
       </div>
       <div>
         <p style={{ display: "inline" }}>Name: </p>
-        <span>{employee.employee_name}</span>
+        <span>{employeeData.employee_name}</span>
       </div>
     </Fragment>
   );

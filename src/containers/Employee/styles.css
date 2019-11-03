@@ -1,3 +1,8 @@
 .employee.container {
   margin: 10px 150px;
+  width: 300px;
+}
+
+p.employee.error {
+  color: red;
 }

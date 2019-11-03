@@ -1,26 +1,24 @@
-import React, { Suspense } from "react";
-import { Container } from "semantic-ui-react";
+import React, { Suspense, useState } from "react";
 import { fetchPerson, fetchLocation, createResource } from "../../utils";
 import PersonComponent from "../../components/PersonComponent/PersonComponent";
 import LoadingComponent from "../../components/LoadingComponent/LoadingComponent";
 import LocationComponent from "../../components/LocationComponent/LocationComponent";
+import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 import "./styles.css";
 
-const titles = ["Title", "First", "Last", "City", "State"];
-
 const Person = () => {
-  let person = createResource(fetchPerson());
-  let location = createResource(fetchLocation());
+  const [person, setPerson] = useState(() => createResource(fetchPerson()));
+  const [location, setLocation] = useState(() => createResource(fetchLocation()));
 
   return (
-    <div>
-      <Container className="test container">
-        <h4>Suspense using fallback component</h4>
-        <Suspense fallback={<LoadingComponent titles={titles} />}>
+    <div className="test container">
+      <h4>Suspense using fallback component</h4>
+      <Suspense fallback={<LoadingComponent rows={5} />}>
+        <ErrorBoundary message="Person Data is not loading ...">
           <PersonComponent person={person} />
           <LocationComponent location={location} />
-        </Suspense>
-      </Container>
+        </ErrorBoundary>
+      </Suspense>
     </div>
   );
 };
