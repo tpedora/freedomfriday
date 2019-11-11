@@ -1,5 +1,5 @@
 import React from "react";
-import { TextField } from "@material-ui/core";
+import { TextField, FormControl } from "@material-ui/core";
 import { useField } from "formik";
 
 const TextFieldComponent = ({ placeholder, ...props }) => {
@@ -8,7 +8,7 @@ const TextFieldComponent = ({ placeholder, ...props }) => {
 
   return (
     <div>
-      <TextField placeholder={placeholder} {...field} helperText={errorText} error={errorText} />
+      <TextField placeholder={placeholder} helperText={errorText} {...field} error={errorText} />
     </div>
   )
 };
